@@ -276,10 +276,16 @@ body {
    DISEÑO RESPONSIVE (MÓVILES Y TABLETS)
 ========================================= */
 @media (max-width: 768px) {
-    .desktop {
-        flex-direction: column;
+    /*Permite el scroll en la página entera en móviles*/
+    body {
         height: auto;
-        min-height: 100vh;
+        overflow-y: auto; 
+    }
+    
+    .desktop { 
+        flex-direction: column; 
+        height: auto; 
+        min-height: 100vh; 
     }
 
     .sidebar {
@@ -319,6 +325,7 @@ body {
     .content-area {
         padding: 20px 15px;
         height: auto;
+        overflow-y: visible;
     }
 
     .window-body {
