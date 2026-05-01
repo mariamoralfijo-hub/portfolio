@@ -184,3 +184,22 @@ body {
     font-weight: bold;
     text-transform: uppercase;
 }
+
+/* --- ESTILOS DE FOTOS SOBRE MI --- */
+.sobre-mi-fotos {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+    margin-bottom: 25px; 
+    margin-top: 15px;
+    flex-wrap: wrap; 
+}
+.foto-os {
+    width: 160px; 
+    height: 160px;
+    object-fit: cover; 
+    border: 3px solid var(--border-color); /* Usamos tu variable de color de borde */
+    box-shadow: 5px 5px 0px var(--shadow-color); /* Usamos tu variable de color de sombra */
+    background-color: var(--window-bg); /* Usamos tu variable de fondo */
+    padding: 4px; 
+}
