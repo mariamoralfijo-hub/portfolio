@@ -1,0 +1,186 @@
+:root {
+    --bg-color: #fdfaf6;
+    --grid-color: #e1dcd3;
+    --window-bg: #ffffff;
+    --header-bg: #d4c4fb;
+    --sidebar-bg: #ffffff;
+    --border-color: #1a1a24;
+    --shadow-color: #1a1a24;
+    --accent-blue: #a3c4f3;
+    --accent-red: #ff6b6b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Space Mono', monospace;
+    background-color: var(--bg-color);
+    background-image: linear-gradient(var(--grid-color) 1px, transparent 1px), 
+                      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: var(--border-color);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.desktop { display: flex; height: 100vh; }
+
+
+.sidebar {
+    width: 280px;
+    background: var(--sidebar-bg);
+    border-right: 4px solid var(--border-color);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.2rem;
+    color: var(--accent-red);
+    text-shadow: 2px 2px 0px var(--border-color);
+    margin-bottom: 40px;
+    transform: rotate(-3deg);
+}
+
+.menu { list-style: none; flex-grow: 1; }
+
+.menu li {
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border: 3px solid var(--border-color);
+    background: white;
+    box-shadow: 4px 4px 0px var(--border-color);
+    transition: 0.1s;
+    font-weight: bold;
+}
+
+.menu li:hover, .menu li.active {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--border-color);
+    background: var(--accent-blue);
+}
+
+.sidebar-footer { display: flex; gap: 20px; font-size: 1.5rem; }
+.sidebar-footer a { color: var(--border-color); }
+
+
+.content-area {
+    flex-grow: 1;
+    height: 100vh;
+    overflow-y: auto; /*activar el scroll vertical*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 40px;
+}
+
+.window {
+    width: 100%;
+    max-width: 800px;
+    background: var(--window-bg);
+    border: 4px solid var(--border-color);
+    box-shadow: 10px 10px 0px var(--shadow-color);
+    border-radius: 12px;
+}
+
+.window-header {
+    background: var(--header-bg);
+    border-bottom: 4px solid var(--border-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.window-controls span {
+    display: inline-block;
+    width: 15px; height: 15px;
+    border: 3px solid var(--border-color);
+    border-radius: 50%;
+    margin-left: 5px;
+}
+.close { background: #ff5f56; }
+.min { background: #ffbd2e; }
+.max { background: #27c93f; }
+
+.window-body { padding: 40px; min-height: 420px; }
+
+
+.tab-content { display: none; animation: pop 0.3s ease-out; }
+.tab-content.active { display: block; }
+
+@keyframes pop {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.section-title { font-size: 2rem; margin-bottom: 20px; }
+
+.info-card {
+    border: 3px solid var(--border-color);
+    padding: 30px;
+    margin-top: 30px;
+    background: white;
+    box-shadow: 5px 5px 0px var(--accent-blue);
+    line-height: 1.8;
+}
+
+.info-card p strong {
+    margin-right: 10px;
+    color: var(--border-color);
+}
+
+.project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.project-item { border: 3px solid var(--border-color); padding: 15px; text-align: center; }
+.tag { display: inline-block; padding: 5px 12px; border: 2px solid var(--border-color); background: var(--accent-blue); margin: 4px; font-weight: bold; }
+.contact-list { list-style: none; }
+.contact-list li { margin-bottom: 10px; padding: 10px; border-bottom: 2px dashed var(--border-color); }
+
+
+.tech-category {
+    margin-bottom: 2rem;
+}
+
+.tech-category h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 3px solid var(--border-color);
+    display: inline-block;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    text-align: center;
+}
+
+.tech-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.tech-icon:hover {
+    border: 2px solid var(--border-color);
+    background: white;
+    box-shadow: 4px 4px 0px var(--border-color);
+    transform: translate(-2px, -2px);
+}
+
+.tech-icon i {
+    font-size: 2.2rem;
+}
+
+.tech-icon span {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
