@@ -186,20 +186,60 @@ body {
 }
 
 /* --- ESTILOS DE FOTOS SOBRE MI --- */
+
+/* Contenedor que pone el texto a la izq y fotos a la der */
+.sobre-mi-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.sobre-mi-texto {
+    flex: 1; /* Hace que el texto ocupe todo el espacio sobrante */
+}
+
+/* Columna de fotos */
 .sobre-mi-fotos {
     display: flex;
-    justify-content: center;
-    gap: 30px; 
-    margin-bottom: 25px; 
-    margin-top: 15px;
-    flex-wrap: wrap; 
+    flex-direction: column; /* Pone una foto debajo de la otra */
+    gap: 20px;
+    width: 220px; /* Ancho de la columna de fotos */
+    flex-shrink: 0; 
 }
+
+/* Estilo de la foto: ahora muestra toda la foto sin recortes */
 .foto-os {
-    width: 160px; 
-    height: 160px;
-    object-fit: cover; 
-    border: 3px solid var(--border-color); /* Usamos tu variable de color de borde */
-    box-shadow: 5px 5px 0px var(--shadow-color); /* Usamos tu variable de color de sombra */
-    background-color: var(--window-bg); /* Usamos tu variable de fondo */
-    padding: 4px; 
+    width: 100%; /* Ocupa el ancho de su columna */
+    height: auto; /* MANTIENE LA PROPORCIÓN REAL (ya no recorta el ordenador) */
+    border: 3px solid var(--border-color);
+    box-shadow: 5px 5px 0px var(--shadow-color);
+    background-color: var(--window-bg);
+    padding: 6px; 
+    transition: transform 0.2s ease;
+}
+
+/* Toque retro: las giramos un poquito */
+.polaroid-1 { transform: rotate(-3deg); }
+.polaroid-2 { transform: rotate(2deg); }
+
+/* Efecto al pasar el ratón por encima */
+.foto-os:hover {
+    transform: scale(1.05) rotate(0deg);
+    z-index: 10;
+}
+
+/* Para que en móviles se ponga una cosa debajo de la otra y no se aplaste */
+@media (max-width: 768px) {
+    .sobre-mi-layout {
+        flex-direction: column;
+    }
+    .sobre-mi-fotos {
+        flex-direction: row; /* En móvil las ponemos lado a lado */
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .foto-os {
+        width: 150px;
+    }
 }
