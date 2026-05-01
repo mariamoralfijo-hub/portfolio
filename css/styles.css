@@ -135,10 +135,8 @@ body {
 
 .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
 .project-item { border: 3px solid var(--border-color); padding: 15px; text-align: center; }
-.tag { display: inline-block; padding: 5px 12px; border: 2px solid var(--border-color); background: var(--accent-blue); margin: 4px; font-weight: bold; }
-.contact-list { list-style: none; }
-.contact-list li { margin-bottom: 10px; padding: 10px; border-bottom: 2px dashed var(--border-color); }
 
+.contact-list { list-style: none; }
 
 .tech-category {
     margin-bottom: 2rem;
@@ -186,17 +184,9 @@ body {
 }
 
 /* --- ESTILOS DE FOTOS SOBRE MI --- */
-
 /* Contenedor que pone el texto a la izq y fotos a la der */
-.sobre-mi-layout {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-}
-
-.sobre-mi-texto {
-    flex: 1; /* Hace que el texto ocupe todo el espacio sobrante */
-}
+.sobre-mi-layout { display: flex;gap: 40px;align-items: flex-start; }
+.sobre-mi-texto { flex: 1; }
 
 /* Columna de fotos */
 .sobre-mi-fotos {
@@ -207,10 +197,9 @@ body {
     flex-shrink: 0; 
 }
 
-/* Estilo de la foto: ahora muestra toda la foto sin recortes */
 .foto-os {
-    width: 100%; /* Ocupa el ancho de su columna */
-    height: auto; /* MANTIENE LA PROPORCIÓN REAL (ya no recorta el ordenador) */
+    width: 100%; 
+    height: auto; 
     border: 3px solid var(--border-color);
     box-shadow: 5px 5px 0px var(--shadow-color);
     background-color: var(--window-bg);
@@ -218,45 +207,15 @@ body {
     transition: transform 0.2s ease;
 }
 
-/* Toque retro: las giramos un poquito */
 .polaroid-1 { transform: rotate(-3deg); }
 .polaroid-2 { transform: rotate(2deg); }
-
-/* Efecto al pasar el ratón por encima */
-.foto-os:hover {
-    transform: scale(1.05) rotate(0deg);
-    z-index: 10;
-}
-
-/* Para que en móviles se ponga una cosa debajo de la otra y no se aplaste */
-@media (max-width: 768px) {
-    .sobre-mi-layout {
-        flex-direction: column;
-    }
-    .sobre-mi-fotos {
-        flex-direction: row; /* En móvil las ponemos lado a lado */
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    .foto-os {
-        width: 150px;
-    }
-}
+.foto-os:hover { transform: scale(1.05) rotate(0deg); z-index: 10; }
 
 
 /* --- ESTILOS DE LA SECCIÓN CONTACTO --- */
+.contacto-intro {margin-bottom: 25px;font-size: 1.1rem;}
+.contacto-intro p {margin-bottom: 10px;}
 
-.contacto-intro {
-    margin-bottom: 25px;
-    font-size: 1.1rem;
-}
-
-.contacto-intro p {
-    margin-bottom: 10px;
-}
-
-/* Modificamos tu lista actual para los nuevos enlaces */
 .contact-list li {
     margin-bottom: 15px;
     padding: 15px;
@@ -265,7 +224,6 @@ body {
     transition: all 0.2s ease;
 }
 
-/* Estilo para los enlaces de contacto (email, linkedin, github) */
 .contact-link {
     color: var(--border-color);
     text-decoration: none;
@@ -275,25 +233,19 @@ body {
     font-weight: bold;
 }
 
-.contact-link i {
-    font-size: 1.4rem;
-    color: var(--accent-blue); /* Le damos un toque de color a los iconos */
-}
+.contact-link i {font-size: 1.4rem;color: var(--accent-blue);}
 
-/* Efecto hover sutil para las filas enteras */
 .contact-list li:hover {
     background-color: #f0f4fc; /* Un azul muy clarito */
     transform: translateX(5px);
     border-style: solid;
 }
 
-/* Contenedor del botón del CV */
 .cv-container {
     margin-top: 35px;
     text-align: center;
 }
 
-/* Diseño del botón retro para el CV */
 .btn-cv {
     display: inline-block;
     padding: 12px 25px;
@@ -302,7 +254,7 @@ body {
     font-size: 1.1rem;
     color: var(--border-color);
     text-decoration: none;
-    background-color: var(--accent-red); /* Usamos tu color rojo de acento */
+    background-color: var(--accent-red); 
     border: 3px solid var(--border-color);
     box-shadow: 4px 4px 0px var(--shadow-color);
     transition: all 0.1s ease;
@@ -312,7 +264,7 @@ body {
 .btn-cv:hover {
     transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0px var(--shadow-color);
-    background-color: #ff8585; /* Un rojo un pelín más claro al pasar el ratón */
+    background-color: #ff8585; 
 }
 
 .btn-cv:active {
@@ -324,20 +276,18 @@ body {
    DISEÑO RESPONSIVE (MÓVILES Y TABLETS)
 ========================================= */
 @media (max-width: 768px) {
-    /* 1. Cambiar la estructura de lado-a-lado a arriba-y-abajo */
     .desktop {
         flex-direction: column;
         height: auto;
         min-height: 100vh;
     }
 
-    /* 2. El menú lateral pasa a estar arriba como una cabecera */
     .sidebar {
         width: 100%;
         border-right: none;
         border-bottom: 4px solid var(--border-color);
         padding: 20px 15px;
-        align-items: center; /* Centramos el logo y las redes */
+        align-items: center;
     }
 
     .brand {
@@ -345,7 +295,6 @@ body {
         font-size: 1.8rem;
     }
 
-    /* 3. Convertir el menú de botones en una cuadrícula compacta */
     .menu {
         display: flex;
         flex-wrap: wrap;
@@ -359,7 +308,7 @@ body {
         margin-bottom: 0;
         padding: 10px 12px;
         font-size: 0.85rem;
-        flex: 1 1 calc(33% - 10px); /* Que ocupen un tercio de la pantalla */
+        flex: 1 1 calc(33% - 10px); 
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -367,7 +316,6 @@ body {
         gap: 5px;
     }
 
-    /* 4. Ajustar el área de contenido y la ventana del OS */
     .content-area {
         padding: 20px 15px;
         height: auto;
@@ -382,12 +330,10 @@ body {
         font-size: 1.5rem;
     }
 
-    /* 5. Los proyectos pasan a verse en 1 sola columna en vez de 3 */
     .project-grid {
         grid-template-columns: 1fr;
     }
 
-    /* 6. Evitar que los enlaces de contacto largos se salgan de la pantalla */
     .contact-link {
         font-size: 0.85rem;
         word-break: break-word; /* Si el email es muy largo, salta de línea */
@@ -401,4 +347,14 @@ body {
         font-size: 0.9rem;
         padding: 10px 15px;
     }
+
+    /*Adaptación de las fotos*/
+    .sobre-mi-layout { flex-direction: column; }
+    .sobre-mi-fotos {
+        flex-direction: row; 
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .foto-os { width: 150px; }
 }
