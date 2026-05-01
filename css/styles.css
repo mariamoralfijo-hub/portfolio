@@ -320,3 +320,85 @@ body {
     box-shadow: 0px 0px 0px var(--shadow-color);
 }
 
+/* =========================================
+   DISEÑO RESPONSIVE (MÓVILES Y TABLETS)
+========================================= */
+@media (max-width: 768px) {
+    /* 1. Cambiar la estructura de lado-a-lado a arriba-y-abajo */
+    .desktop {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    /* 2. El menú lateral pasa a estar arriba como una cabecera */
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 4px solid var(--border-color);
+        padding: 20px 15px;
+        align-items: center; /* Centramos el logo y las redes */
+    }
+
+    .brand {
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+    }
+
+    /* 3. Convertir el menú de botones en una cuadrícula compacta */
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        padding: 0;
+    }
+
+    .menu li {
+        margin-bottom: 0;
+        padding: 10px 12px;
+        font-size: 0.85rem;
+        flex: 1 1 calc(33% - 10px); /* Que ocupen un tercio de la pantalla */
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    /* 4. Ajustar el área de contenido y la ventana del OS */
+    .content-area {
+        padding: 20px 15px;
+        height: auto;
+    }
+
+    .window-body {
+        padding: 20px 15px;
+        min-height: auto;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    /* 5. Los proyectos pasan a verse en 1 sola columna en vez de 3 */
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 6. Evitar que los enlaces de contacto largos se salgan de la pantalla */
+    .contact-link {
+        font-size: 0.85rem;
+        word-break: break-word; /* Si el email es muy largo, salta de línea */
+    }
+    
+    .contact-list li {
+        padding: 10px;
+    }
+    
+    .btn-cv {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+}
