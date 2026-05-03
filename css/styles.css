@@ -343,8 +343,16 @@ body {
     }
     
     .btn-cv {
-        font-size: 0.9rem;
-        padding: 10px 15px;
+        display: inline-block;
+        padding: 10px 15px; /* Padding más pequeño para móvil */
+        font-family: 'Space Mono', monospace;
+        font-weight: bold;
+        font-size: 0.9rem; /* Letra más pequeña para móvil */
+        color: var(--border-color) !important;
+        text-decoration: none !important;
+        background-color: var(--accent-red) !important;
+        border: 3px solid var(--border-color) !important;
+        box-shadow: 4px 4px 0px var(--shadow-color) !important;
     }
 
     /*Adaptación de las fotos*/
