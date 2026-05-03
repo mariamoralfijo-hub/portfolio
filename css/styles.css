@@ -261,7 +261,38 @@ body {
     box-shadow: 0px 0px 0px var(--shadow-color);
 }
 
+/* Contenedor del botón del CV */
+.cv-container {
+    margin-top: 35px;
+    text-align: center;
+}
 
+/* Diseño del botón retro para el CV */
+.btn-cv {
+    display: inline-block;
+    padding: 12px 25px;
+    font-family: 'Space Mono', monospace;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--border-color);
+    text-decoration: none;
+    background-color: var(--accent-red);
+    border: 3px solid var(--border-color);
+    box-shadow: 4px 4px 0px var(--shadow-color);
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+.btn-cv:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--shadow-color);
+    background-color: #ff8585; 
+}
+
+.btn-cv:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px var(--shadow-color);
+}
 
 
 /* =========================================
