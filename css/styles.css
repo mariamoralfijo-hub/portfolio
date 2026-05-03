@@ -334,8 +334,8 @@ body {
     }
 
     .contact-link {
-        font-size: 0.85rem;
-        word-break: break-word; /* Si el email es muy largo, salta de línea */
+        font-size: 0.75rem;
+        word-break: normal; 
     }
     
     .contact-list li {
