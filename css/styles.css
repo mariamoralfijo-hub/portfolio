@@ -294,6 +294,23 @@ body {
     box-shadow: 0px 0px 0px var(--shadow-color);
 }
 
+/* --- RECUADRO INFORMATIVO DE UBICACIÓN (NO CLICABLE) --- */
+.contact-list li.static-box {
+    border: 2px dashed var(--border-color); /* Borde discontinuo como antes */
+    box-shadow: none; /* Quitamos la sombra 3D */
+    padding: 15px; /* Le devolvemos su espacio interior */
+    font-weight: bold;
+    cursor: default; /* El cursor se queda como flecha normal, no como manita */
+}
+
+/* Quitamos los efectos de movimiento al pasar el ratón para que parezca estático */
+.contact-list li.static-box:hover,
+.contact-list li.static-box:active {
+    transform: none;
+    box-shadow: none;
+    background-color: var(--window-bg);
+}
+
 
 /* =========================================
    DISEÑO RESPONSIVE (MÓVILES Y TABLETS)
