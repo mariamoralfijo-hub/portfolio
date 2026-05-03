@@ -212,92 +212,56 @@ body {
 .foto-os:hover { transform: scale(1.05) rotate(0deg); z-index: 10; }
 
 
-/* --- ESTILOS DE LA SECCIÓN CONTACTO --- */
-.contacto-intro {margin-bottom: 25px;font-size: 1.1rem;}
-.contacto-intro p {margin-bottom: 10px;}
-
+/* --- BOTONES DE CONTACTO (EMAIL Y LINKEDIN) --- */
 .contact-list li {
     margin-bottom: 15px;
-    padding: 15px;
-    border: 2px dashed var(--border-color);
+    border: 3px solid var(--border-color); /* Borde sólido de botón */
     background-color: var(--window-bg);
-    transition: all 0.2s ease;
+    box-shadow: 4px 4px 0px var(--shadow-color); /* Sombra dura retro */
+    transition: all 0.1s ease;
+    list-style: none;
+    padding: 0; /* Quitamos el padding aquí para ponérselo al enlace */
 }
 
+/* Hacemos que toda el área del botón sea clicable */
 .contact-link {
     color: var(--border-color);
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between; /* Separa el texto de la flechita de salida */
+    padding: 15px;
     font-weight: bold;
+    width: 100%;
+    height: 100%;
 }
 
-.contact-link i {font-size: 1.4rem;color: var(--accent-blue);}
+/* Agrupamos el icono principal y el texto */
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
+.contact-info i {
+    font-size: 1.4rem;
+    color: var(--accent-blue);
+}
+
+/* Efecto Hover: se levanta como tu menú lateral */
 .contact-list li:hover {
-    background-color: #f0f4fc; /* Un azul muy clarito */
-    transform: translateX(5px);
-    border-style: solid;
-}
-
-.cv-container {
-    margin-top: 35px;
-    text-align: center;
-}
-
-.btn-cv {
-    display: inline-block;
-    padding: 12px 25px;
-    font-family: 'Space Mono', monospace;
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: var(--border-color);
-    text-decoration: none;
-    background-color: var(--accent-red); 
-    border: 3px solid var(--border-color);
-    box-shadow: 4px 4px 0px var(--shadow-color);
-    transition: all 0.1s ease;
-    cursor: pointer;
-}
-
-.btn-cv:hover {
+    background-color: #f0f4fc; 
     transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0px var(--shadow-color);
-    background-color: #ff8585; 
 }
 
-.btn-cv:active {
+/* Efecto Activo (Click/Tap): se hunde al pulsarlo */
+.contact-list li:active {
     transform: translate(4px, 4px);
     box-shadow: 0px 0px 0px var(--shadow-color);
 }
 
-/* --- SELLO DE PUNTERO RETRO (POSICIONAMIENTO) --- */
 
-/* Aseguramos que el cuerpo de la ventana permite posicionar elementos absolutos */
-.window-body {
-    position: relative; 
-}
-
-/* Estilo para el sello del puntero */
-.pointer-stamp {
-    position: absolute;
-    bottom: 20px; /* Separación desde abajo */
-    right: 20px; /* Separación desde la derecha */
-    width: 60px; /* Tamaño del sello */
-    height: 60px;
-    background-color: #fff; /* Fondo blanco */
-    border: 4px solid var(--border-color); /* Borde bold estilo OS */
-    border-radius: 50%; /* Lo hacemos redondo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 4px 4px 0px var(--shadow-color); /* Sombra bold retro */
-    font-size: 2rem; /* Tamaño del icono */
-    color: var(--border-color);
-    z-index: 5;
-    pointer-events: none; /* Para que no intercepte los clics */
-}
 
 
 /* =========================================
