@@ -241,6 +241,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
+    max-width: 90%; /* Evita que el grupo de texto empuje al icono de la flecha fuera */
 }
 
 .contact-info i {
@@ -383,11 +384,25 @@ body {
 
     .contact-link {
         font-size: 0.75rem;
-        word-break: normal; 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        width: 100%;
+        /* Estas 3 líneas evitan que el texto se salga: */
+        word-break: break-all;      /* Rompe la URL si es necesario */
+        overflow-wrap: break-word;  /* Asegura el salto de línea */
+        white-space: normal;        /* Permite que el texto use varias líneas */
     }
     
     .contact-list li {
         padding: 10px;
+    }
+    
+    /* Ajuste del recuadro estático de ubicación para móvil */
+    .contact-list li.static-box {
+        font-size: 0.75rem; 
+        padding: 12px 10px; 
     }
     
     .btn-cv {
